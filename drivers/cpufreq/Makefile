@@ -9,7 +9,10 @@ obj-$(CONFIG_CPU_FREQ_GOV_POWERSAVE)    += cpufreq_powersave.o
 obj-$(CONFIG_CPU_FREQ_GOV_USERSPACE)    += cpufreq_userspace.o
 obj-$(CONFIG_CPU_FREQ_GOV_ONDEMAND)     += cpufreq_ondemand.o
 obj-$(CONFIG_CPU_FREQ_GOV_CONSERVATIVE) += cpufreq_conservative.o
+<<<<<<< HEAD
 obj-$(CONFIG_CPU_FREQ_GOV_SMARTASS2)    += cpufreq_smartass2.o
+=======
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 obj-$(CONFIG_CPU_FREQ_GOV_INTERACTIVE)  += cpufreq_interactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_MINMAX)       += cpufreq_minmax.o
 

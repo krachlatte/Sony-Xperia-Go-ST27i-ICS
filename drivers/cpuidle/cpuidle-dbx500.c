@@ -725,8 +725,16 @@ static int __init cpuidle_driver_init(void)
 	int cpu;
 
 	/* Configure wake up reasons */
+<<<<<<< HEAD
 
 	prcmu_enable_wakeups(PRCMU_WAKEUP(ARM) | PRCMU_WAKEUP(RTC) |
+=======
+	if (cpu_is_u9500())
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ARM) | PRCMU_WAKEUP(RTC) |
+				     PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(HSI0));
+	else
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ARM) | PRCMU_WAKEUP(RTC) |
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 				     PRCMU_WAKEUP(ABB));
 
 	ux500_ci_dbg_init();

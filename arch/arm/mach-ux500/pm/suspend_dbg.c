@@ -123,7 +123,15 @@ void ux500_suspend_dbg_test_set_wakeup(void)
 	/* Make sure the rtc writes have been accepted */
 	udelay(120);
 
+<<<<<<< HEAD
 	prcmu_enable_wakeups(PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(RTC));
+=======
+	if (cpu_is_u9500())
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(RTC) |
+				     PRCMU_WAKEUP(HSI0));
+	else
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(RTC));
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 
 	/* Program RTC to generate an interrupt 1s later */
 	ux500_rtcrtt_next(1000000);

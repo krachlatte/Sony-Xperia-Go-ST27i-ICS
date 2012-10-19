@@ -245,8 +245,13 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 
 HOSTCC       = gcc
 HOSTCXX      = g++
+<<<<<<< HEAD
 HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O3 -fomit-frame-pointer
 HOSTCXXFLAGS = -O3
+=======
+HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer
+HOSTCXXFLAGS = -O2
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -561,7 +566,11 @@ all: vmlinux
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
+<<<<<<< HEAD
 KBUILD_CFLAGS	+= -O3
+=======
+KBUILD_CFLAGS	+= -O2
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile

@@ -75,7 +75,13 @@ static int suspend(bool do_deepsleep)
 	nmk_gpio_wakeups_suspend();
 
 	/* configure the prcm for a sleep wakeup */
+<<<<<<< HEAD
 
+=======
+	if (cpu_is_u9500())
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(HSI0));
+	else
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 #if defined(CONFIG_RTC_DRV_PL031)
 		prcmu_enable_wakeups(PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(RTC));
 #else
@@ -179,6 +185,12 @@ exit:
 	}
 
 	/* This is what cpuidle wants */
+<<<<<<< HEAD
+=======
+	if (cpu_is_u9500())
+		prcmu_enable_wakeups(PRCMU_WAKEUP(ARM) | PRCMU_WAKEUP(RTC) |
+				     PRCMU_WAKEUP(ABB) | PRCMU_WAKEUP(HSI0));
+>>>>>>> 3fc26bfd72d7792d13ffe632fd7b6a77a4040670
 	else
 		prcmu_enable_wakeups(PRCMU_WAKEUP(ARM) | PRCMU_WAKEUP(RTC) |
 				     PRCMU_WAKEUP(ABB));
